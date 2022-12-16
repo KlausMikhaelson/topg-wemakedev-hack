@@ -11,7 +11,7 @@ const Player = () => {
     })
 
     return(
-        <primitive object={model.scene} />
+        <primitive object={model.scene} scale={0.5} />
     )
 }
 
