@@ -1,6 +1,8 @@
 import { useLoader } from "@react-three/fiber";
 // import { LandTexture } from "./Texture";
+// @ts-ignore
 import {NearestFilter, RepeatWrapping} from "three"
+// @ts-ignore
 import {TextureLoader} from "three/src/loaders/TextureLoader"
 import {Land} from "./Images"
 
