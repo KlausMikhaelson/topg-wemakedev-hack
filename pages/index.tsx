@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Ground from '../Component/Ground'
 import {Suspense} from "react"
+import Player from '../Component/Player'
 
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
     <>
     <div className={styles.container}>
     <Canvas>
-      <ambientLight />
+      <ambientLight intensity={0.5}/>
       <OrbitControls />
       <Suspense fallback={null}>
+        <Player />
       <Ground />
       <Environment preset='city' />
       </Suspense>
