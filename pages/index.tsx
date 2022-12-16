@@ -5,15 +5,17 @@ import styles from '../styles/Home.module.css'
 import Ground from '../Component/Ground'
 import {Suspense} from "react"
 import Player from '../Component/Player'
-
+import SocketHome from './Socket'
 
 export default function Home() {
+
   return (
     <>
     <div className={styles.container}>
     <Canvas>
       <ambientLight intensity={0.5}/>
       <OrbitControls />
+      <SocketHome />
       <Suspense fallback={null}>
         <Player />
       <Ground />
