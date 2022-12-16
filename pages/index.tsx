@@ -15,9 +15,10 @@ export default function Home() {
     <Canvas>
       <ambientLight intensity={0.5}/>
       <OrbitControls />
-      <SocketHome />
+      
       <Suspense fallback={null}>
-        <Player />
+        {/* <Player /> */}
+        <SocketHome />
       <Ground />
       <Environment preset='city' />
       </Suspense>
