@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
     <div className={styles.container}>
-    <Canvas camera={{position:[0,2,0]}}>
+    <Canvas>
       <ambientLight />
       <OrbitControls />
       <Ground />
