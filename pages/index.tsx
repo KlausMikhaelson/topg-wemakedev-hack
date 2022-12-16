@@ -5,27 +5,9 @@ import styles from '../styles/Home.module.css'
 import Ground from '../Component/Ground'
 import {Suspense} from "react"
 import Player from '../Component/Player'
-import { useEffect } from 'react'
-import io from "socket.io-client"
-
-let socket
-
-
-const socketInitializer = async () => {
-  await fetch('/api/socket')
-  socket = io()
-
-  socket.on('connect', () => {
-    console.log("connected")
-  })
-}
+import SocketHome from './Socket'
 
 export default function Home() {
-  // @ts-ignore
-  useEffect(() => {
-    socketInitializer();
-  }
-  , [])
 
   return (
     <>
@@ -33,6 +15,7 @@ export default function Home() {
     <Canvas>
       <ambientLight intensity={0.5}/>
       <OrbitControls />
+      <SocketHome />
       <Suspense fallback={null}>
         <Player />
       <Ground />
