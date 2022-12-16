@@ -1,9 +1,9 @@
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, Environment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Ground from './Component/Ground'
-import { Physics } from '@react-three/cannon'
+import Ground from '../Component/Ground'
+import {Suspense} from "react"
 
 
 export default function Home() {
@@ -13,7 +13,10 @@ export default function Home() {
     <Canvas>
       <ambientLight />
       <OrbitControls />
+      <Suspense fallback={null}>
       <Ground />
+      <Environment preset='city' />
+      </Suspense>
     </Canvas>
     </div>
     </>
