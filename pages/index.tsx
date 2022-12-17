@@ -9,6 +9,8 @@ import {Physics} from "@react-three/cannon"
 import { GiftModel } from '../Component/Player'
 // import SocketHome from './Socket'
 import io from 'socket.io-client'
+import Hurdle from '../Component/Hurdles'
+import Intro from '../Component/Intro'
 
 let socket;
 
@@ -26,7 +28,9 @@ export default function Home() {
       {/* <SocketHome /> */}
       <Suspense fallback={null}>
         <Player />
+        <Hurdle boundary={100} count={10}/>
         {/* <fog attach="fog" color="#03A062" near={5} far={10} /> */}
+        <Intro />
         <GiftModel />
       <Ground />
       <Environment preset='city' />
