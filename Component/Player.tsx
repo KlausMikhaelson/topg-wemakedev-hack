@@ -55,7 +55,7 @@ function getRandomArbitrary(low, high) {
     return Math.random() * (high - low) + low;
 }
 
-var itemPos = [getRandomArbitrary(-100, 100), 1, getRandomArbitrary(-100, 100)];
+var itemPos = [getRandomArbitrary(-20, 20), 1, getRandomArbitrary(-20, 20)];
 export const GiftModel: React.FC = () => {
     const KunalMap = useLoader(TextureLoader, './kunals.png')
     // colorMap.wrapS = RepeatWrapping
