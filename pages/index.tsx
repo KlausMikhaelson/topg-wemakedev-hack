@@ -6,6 +6,7 @@ import Ground from '../Component/Ground'
 import {Suspense, useEffect} from "react"
 import Player from '../Component/Player'
 import {Physics} from "@react-three/cannon"
+import { GiftModel } from '../Component/Player'
 // import SocketHome from './Socket'
 import io from 'socket.io-client'
 
@@ -25,6 +26,8 @@ export default function Home() {
       {/* <SocketHome /> */}
       <Suspense fallback={null}>
         <Player />
+        {/* <fog attach="fog" color="#03A062" near={5} far={10} /> */}
+        <GiftModel />
       <Ground />
       <Environment preset='city' />
       </Suspense>
