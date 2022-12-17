@@ -170,8 +170,8 @@ const Player: React.FC = () => {
         (playerPos[1] == avItemPos[1] && playerPos[2] == avItemPos[2]) ||
         (playerPos[0] == avItemPos[0] && playerPos[2] == avItemPos[2])) {
 
-        console.log("You win")
-        // router.push('/gameover');
+        // console.log("You win")
+        router.push('/YouWon');
     }
 
     const [ref] = useBox(
