@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 import { StreamChat } from 'stream-chat'
 import { Chat, Channel, ChannelHeader, MessageInput, MessageInputSmall, VirtualizedMessageList, Window } from 'stream-chat-react';
 
@@ -18,22 +18,28 @@ export default function ChatPage() {
   const videoRef = useRef();
 
   useEffect(() => {
+    // @ts-ignore
     if ( !user?.id ) return;
 
     (async function run() {
+    // @ts-ignore
       const client = StreamChat.getInstance(process.env.NEXT_PUBLIC_STREAM_API_KEY);
+    // @ts-ignore
       setClient(client);
 
       const { token } = await fetch('/api/token_gen', {
         method: 'POST',
         body: JSON.stringify({
+    // @ts-ignore
           id: user.id
         })
       }).then(r => r.json());
 
       await client.connectUser(
         {
+    // @ts-ignore
           id: user.id,
+    // @ts-ignore
           name: user.id,
           image: 'https://i.imgur.com/fR9Jz14.png',
         },
@@ -43,23 +49,26 @@ export default function ChatPage() {
       const channel = client.channel('livestream', 'mylivestream', {
         name: 'Kunal\'s live session',
       });
-
+    // @ts-ignore
       setChannel(channel);
     })();
 
     return () => {
+    // @ts-ignore
       client.disconnectUser();
       setChannel(undefined);
     }
-
+    // @ts-ignore
   }, [user.id]);
 
   useEffect(() => {
     if ( !channel ) return;
+    // @ts-ignore
     const listener = channel.on('message.new', async (event) => {
+    // @ts-ignore
       const player = videoRef.current.getInternalPlayer();
       const time = await player.getCurrentTime();
-
+    // @ts-ignore
       setMessages(prev => {
         return [
           ...prev,
@@ -86,7 +95,7 @@ export default function ChatPage() {
       </Head>
 
       <main className={styles.main}>
-
+{/* @ts-ignore */}
         {!user?.id && (
           <>
             <h1>Koffee with Kunal</h1>
@@ -95,6 +104,7 @@ export default function ChatPage() {
 
             <form onSubmit={(e) => {
               e.preventDefault();
+{/* @ts-ignore */}
               const id = Array.from(e.currentTarget.elements).find(({ name }) => name ==='userId').value;
               setUser({ id });
             }}>
@@ -103,11 +113,11 @@ export default function ChatPage() {
             </form>
           </>
         )}
-
+{/* @ts-ignore */}
         {user?.id && (
           <>
-            <div className={styles.stream}>
-              <div className={styles.streamVideo}>
+            <div>
+              <div>
               <video className={styles.RickROll} src="../Rick.mp4" autoPlay></video>
               </div>
 
@@ -118,6 +128,7 @@ export default function ChatPage() {
                       <Window>
                         <ChannelHeader live />
                         <VirtualizedMessageList />
+{/* @ts-ignore */}
                         {!channel.id.includes('replay') && (
                           <MessageInput Input={MessageInputSmall} focus />
                         )}
