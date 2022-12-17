@@ -3,6 +3,7 @@ import { useLoader } from "@react-three/fiber";
 import {NearestFilter, RepeatWrapping} from "three"
 // @ts-ignore
 import {TextureLoader} from "three/src/loaders/TextureLoader"
+import { usePlane } from "@react-three/cannon";
 
 const Ground = () => {
 
@@ -11,11 +12,18 @@ const Ground = () => {
     colorMap.wrapT = RepeatWrapping
     colorMap.repeat.set(150,150)
 
+    const [ref] = usePlane(() => ({
+        rotation: [Math.PI * -0.5, 0, 0],
+        mass: 10,
+        type: "Static",
+        material: "ground"
+    }))
+
     return(
         <>
-        <mesh rotation-x={Math.PI * -0.5}>
+        <mesh ref={ref} rotation-x={Math.PI * -0.5}>
             <ambientLight />
-            <planeBufferGeometry args={[150,150, 20, 20]} />
+            <planeBufferGeometry args={[1000,1000]} />
             <meshStandardMaterial map={colorMap}/>
         </mesh>
         </>
