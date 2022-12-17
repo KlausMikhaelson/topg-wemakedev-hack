@@ -55,7 +55,7 @@ function getRandomArbitrary(low, high) {
     return Math.random() * (high - low) + low;
 }
 
-var itemPos = [getRandomArbitrary(-20, 20), 1, getRandomArbitrary(-20, 20)];
+var itemPos = [getRandomArbitrary(-20, 20), 0, getRandomArbitrary(-100, 100)];
 export const GiftModel: React.FC = () => {
     const KunalMap = useLoader(TextureLoader, './kunals.png')
     // colorMap.wrapS = RepeatWrapping
@@ -75,7 +75,7 @@ export const GiftModel: React.FC = () => {
         <>
             <mesh ref={ref} rotation-x={Math.PI * -0.5} scale={2}>
                 <ambientLight />
-                <boxGeometry />
+                <boxGeometry args={[2, 1, 2]}/>
                 <meshStandardMaterial map={KunalMap} />
             </mesh>
         </>
@@ -166,9 +166,12 @@ const Player: React.FC = () => {
 
     console.log(playerPos);
     console.log(avItemPos);
-    if ((playerPos[0] == avItemPos[0] && playerPos[1] == avItemPos[1]) ||
-        (playerPos[1] == avItemPos[1] && playerPos[2] == avItemPos[2]) ||
-        (playerPos[0] == avItemPos[0] && playerPos[2] == avItemPos[2])) {
+    if (
+        // (playerPos[0] - avItemPos[0] < 2 && playerPos[1] - avItemPos[1] == 0) ||
+        // (playerPos[1] - avItemPos[1] == 0 && playerPos[2] - avItemPos[2] < 2) &&
+        // (playerPos[0] - avItemPos[0] < 2 && playerPos[2] - avItemPos[2] < 2)
+        (playerPos[0] - avItemPos[0] < 3 && playerPos[1] - avItemPos[1] == 0 && playerPos[2] == avItemPos[2])
+        ) {
 
         // console.log("You win")
         router.push('/YouWon');

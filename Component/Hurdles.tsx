@@ -32,7 +32,7 @@ const Hurdles: React.FC<props> = ({ boundary, count }) => {
 const Hurdle01 = () => {
     return(
         <mesh>
-            <boxBufferGeometry args={[10, 20]}/>
+            <boxBufferGeometry args={[10, 10]}/>
             <meshBasicMaterial />
         </mesh>
     )
