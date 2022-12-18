@@ -1,3 +1,6 @@
+# Scavenger Hunt (Hunt for your future !)
+- The radius of the platforms have been kept small right now so that people can see what it is real quick !
+
 ## Inspiration
 Our original idea was to create a 3D multiplayer game but because of facing tons of issues we were not able to implement it but than on the 2nd day of Hackathon one of our teammate (Satyam) got this idea of creating a **Scavenger Hunt** game with a matrix movie theme and make it as a prank kind of a game.
 ## What it does
