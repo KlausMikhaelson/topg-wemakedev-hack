@@ -170,7 +170,7 @@ const Player: React.FC = () => {
         // (playerPos[0] - avItemPos[0] < 2 && playerPos[1] - avItemPos[1] == 0) ||
         // (playerPos[1] - avItemPos[1] == 0 && playerPos[2] - avItemPos[2] < 2) &&
         // (playerPos[0] - avItemPos[0] < 2 && playerPos[2] - avItemPos[2] < 2)
-        (playerPos[0] - avItemPos[0] < 3 && playerPos[1] - avItemPos[1] == 0 && playerPos[2] == avItemPos[2])
+        (playerPos[0] - avItemPos[0] == 0 && playerPos[1] - avItemPos[1] == 0 && playerPos[2] == avItemPos[2])
         ) {
 
         // console.log("You win")
