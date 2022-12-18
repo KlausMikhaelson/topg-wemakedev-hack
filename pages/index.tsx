@@ -28,8 +28,8 @@ export default function Home() {
       {/* <SocketHome /> */}
       <Suspense fallback={null}>
         <Player />
-        <Hurdle boundary={100} count={10}/>
-        {/* <fog attach="fog" color="#03A062" near={5} far={10} /> */}
+        <Hurdle boundary={200} count={30}/>
+        <fog attach="fog" color="#03A062" near={10} far={50} />
         <Intro />
         <GiftModel />
       <Ground />

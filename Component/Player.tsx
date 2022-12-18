@@ -55,7 +55,7 @@ function getRandomArbitrary(low, high) {
     return Math.random() * (high - low) + low;
 }
 
-var itemPos = [getRandomArbitrary(-20, 20), 0, getRandomArbitrary(-100, 100)];
+var itemPos = [getRandomArbitrary(-150, 150), 0, getRandomArbitrary(-150, 150)];
 export const GiftModel: React.FC = () => {
     const KunalMap = useLoader(TextureLoader, './kunals.png')
     // colorMap.wrapS = RepeatWrapping
@@ -150,7 +150,7 @@ const Player: React.FC = () => {
             walkdirection.normalize();
             walkdirection.applyAxisAngle(rotateAngle, newDirections);
 
-            const velocity = currentAction.current == "walk" ? 3 : 2;
+            const velocity = currentAction.current == "walk" ? 8 : 2;
 
             const moveX = walkdirection.x * velocity * delta;
             const moveZ = walkdirection.z * velocity * delta;

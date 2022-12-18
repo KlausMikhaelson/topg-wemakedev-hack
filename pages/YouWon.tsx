@@ -6,7 +6,7 @@ const WonGame = () => {
     const router = useRouter()
     return (
         <div className={styles.Game}>
-            <video className={styles.RickROll} src="../Rick.mp4" autoPlay></video>
+            <video loop className={styles.RickROll} src="../Rick.mp4" autoPlay></video>
             <button onClick={() => {
 
                 router.push('/chatPage')

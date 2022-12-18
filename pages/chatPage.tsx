@@ -118,7 +118,7 @@ export default function ChatPage() {
           <>
             <div className={styles.final_rickroll}>
               <div>
-              <video className={styles.Rickroll_last} src="../Rick.mp4" autoPlay></video>
+              <video loop className={styles.Rickroll_last} src="../Rick.mp4" autoPlay></video>
               </div>
 
               <div>
