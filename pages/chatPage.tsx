@@ -87,7 +87,7 @@ export default function ChatPage() {
   
 
   return (
-    <div className={styles.container}>
+    <div className={styles.chat_container}>
       <Head>
         <title>Stream &amp; Chat!</title>
         <meta name="description" content="Watch some youtube and chat with your friends!" />
@@ -116,9 +116,9 @@ export default function ChatPage() {
 {/* @ts-ignore */}
         {user?.id && (
           <>
-            <div>
+            <div className={styles.final_rickroll}>
               <div>
-              <video className={styles.RickROll} src="../Rick.mp4" autoPlay></video>
+              <video className={styles.Rickroll_last} src="../Rick.mp4" autoPlay></video>
               </div>
 
               <div>

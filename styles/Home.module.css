@@ -3,6 +3,27 @@
   width: 100%;
 }
 
+.chat_container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.chat_container input {
+  color: black;
+}
+
+/* .Rickroll_last {
+  width: ;
+} */
+
+.final_rickroll {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: -10%;
+}
+
 .RickROll {
   height: 100vh;
   width: 60%;
@@ -12,4 +33,11 @@
   height: 100vh;
   width: 100%;
   background-color: black;
+  display: flex;
+}
+
+.Game button {
+  margin-top: 20%;
+  height: 10px;
+  padding: 50px;
 }
