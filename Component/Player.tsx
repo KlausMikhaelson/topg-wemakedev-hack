@@ -55,7 +55,7 @@ function getRandomArbitrary(low, high) {
     return Math.random() * (high - low) + low;
 }
 
-var CpPos = [getRandomArbitrary(-100, 100), 0, getRandomArbitrary(-100, 100)];
+var CpPos = [getRandomArbitrary(-70, 70), 0, getRandomArbitrary(-70, 70)];
 
 export const CPModel: React.FC = () => {
     const KunalOppo = useLoader(TextureLoader, './kunaloppo.png');
@@ -75,7 +75,7 @@ export const CPModel: React.FC = () => {
 }
 
 
-var itemPos = [getRandomArbitrary(-100, 100), 0, getRandomArbitrary(-100, 100)];
+var itemPos = [getRandomArbitrary(-70, 70), 0, getRandomArbitrary(-70, 70)];
 export const GiftModel: React.FC = () => {
     const KunalMap = useLoader(TextureLoader, './kunal4.png')
     // colorMap.wrapS = RepeatWrapping
