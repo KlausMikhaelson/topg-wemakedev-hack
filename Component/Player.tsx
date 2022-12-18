@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Physics, useBox, useCompoundBody, usePlane } from '@react-three/cannon'
 import { useFrame, useLoader, useThree } from "@react-three/fiber"
-import { OrbitControls, useAnimations, useHelper } from "@react-three/drei";
+import { OrbitControls, useAnimations, useBoxProjectedEnv, useHelper } from "@react-three/drei";
 import React, { forwardRef, useEffect, useRef } from "react";
 import { useInput } from "../hooks/Keyboard";
     // @ts-ignore 
@@ -55,9 +55,29 @@ function getRandomArbitrary(low, high) {
     return Math.random() * (high - low) + low;
 }
 
-var itemPos = [getRandomArbitrary(-150, 150), 0, getRandomArbitrary(-150, 150)];
+var CpPos = [getRandomArbitrary(-100, 100), 0, getRandomArbitrary(-100, 100)];
+
+export const CPModel: React.FC = () => {
+    const KunalOppo = useLoader(TextureLoader, './kunaloppo.png');
+    const [Cpref] = useBox(() =>( {
+        // @ts-ignore
+        position: CpPos
+    }))
+    return(
+        <>
+        <mesh ref={Cpref} scale={2}>
+            <ambientLight />
+            <boxBufferGeometry args={[2,1,2]} />
+            <meshBasicMaterial map={KunalOppo} />
+        </mesh>
+        </>
+    )
+}
+
+
+var itemPos = [getRandomArbitrary(-100, 100), 0, getRandomArbitrary(-100, 100)];
 export const GiftModel: React.FC = () => {
-    const KunalMap = useLoader(TextureLoader, './kunals.png')
+    const KunalMap = useLoader(TextureLoader, './kunal4.png')
     // colorMap.wrapS = RepeatWrapping
     // colorMap.wrapT = RepeatWrapping
     // colorMap.repeat.set(1,150)
@@ -163,9 +183,11 @@ const Player: React.FC = () => {
     const router = useRouter()
     var playerPos = [Math.round(modelPlayer.scene.position.x), Math.round(modelPlayer.scene.position.y), Math.round(modelPlayer.scene.position.z)];
     var avItemPos = [Math.round(itemPos[0]), Math.round(itemPos[1]), Math.round(itemPos[2])]
+    var CPItempos = [Math.round(CpPos[0]), Math.round(CpPos[1]), Math.round(CpPos[2])]
 
     console.log(playerPos);
     console.log(avItemPos);
+    console.log(CPItempos);
     if (
         // (playerPos[0] - avItemPos[0] < 2 && playerPos[1] - avItemPos[1] == 0) ||
         // (playerPos[1] - avItemPos[1] == 0 && playerPos[2] - avItemPos[2] < 2) &&
@@ -175,6 +197,11 @@ const Player: React.FC = () => {
 
         // console.log("You win")
         router.push('/YouWon');
+    }
+    if(
+        (playerPos[0] - CPItempos[0] == 0 && playerPos[1] - CPItempos[1] == 0 && playerPos[2] == CPItempos[2])
+    ) {
+        router.push('/YouLose');
     }
 
     const [ref] = useBox(

@@ -3,6 +3,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Physics, useBox, usePlane } from '@react-three/cannon'
 import { useFrame, useLoader, useThree } from "@react-three/fiber"
 import React, { forwardRef, useEffect, useRef, useState } from "react";
+// @ts-ignore 
+import {TextureLoader} from "three/src/loaders/TextureLoader"
 // @ts-ignore
 import * as THREE from "three"
 
@@ -30,10 +32,11 @@ const Hurdles: React.FC<props> = ({ boundary, count }) => {
   const [hurdles, setHurdles] = useState<HurdleType[]>([]);
 
 const Hurdle01 = () => {
+  const WelcomeMap = useLoader(TextureLoader, './walltexture.jpg')
     return(
         <mesh>
             <boxBufferGeometry args={[10, 10]}/>
-            <meshBasicMaterial />
+            <meshBasicMaterial map={WelcomeMap} />
         </mesh>
     )
 }

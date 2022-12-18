@@ -6,7 +6,7 @@ import Ground from '../Component/Ground'
 import {Suspense, useEffect} from "react"
 import Player from '../Component/Player'
 import {Physics} from "@react-three/cannon"
-import { GiftModel } from '../Component/Player'
+import { GiftModel, CPModel } from '../Component/Player'
 // import SocketHome from './Socket'
 import io from 'socket.io-client'
 import Hurdle from '../Component/Hurdles'
@@ -29,9 +29,10 @@ export default function Home() {
       <Suspense fallback={null}>
         <Player />
         <Hurdle boundary={500} count={50}/>
-        {/* <fog attach="fog" color="#03A062" near={10} far={50} /> */}
+        <fog attach="fog" color="#03A062" near={10} far={50} />
         <Intro />
         <GiftModel />
+        <CPModel />
       <Ground />
       <Environment preset='city' />
       </Suspense>

@@ -5,13 +5,13 @@ import { useLoader } from "@react-three/fiber"
 
 const Intro = () => {
 
-    const WelcomeMap = useLoader(TextureLoader, './Welcome.png')
+    const WelcomeMap = useLoader(TextureLoader, './Welcome2.png')
     // colorMap.wrapS = RepeatWrapping
     // colorMap.wrapT = RepeatWrapping
     // colorMap.repeat.set(150,150)
 
     return(
-        <mesh position={[0, 1, -10]}>
+        <mesh position={[0, 3, -10]}>
             <boxBufferGeometry args={[15, 10]}/>
             <meshBasicMaterial map={WelcomeMap} />
         </mesh>
