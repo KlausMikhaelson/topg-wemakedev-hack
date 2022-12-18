@@ -1,34 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Inspiration
+Our original idea was to create a 3D multiplayer game but because of facing tons of issues we were not able to implement it but than on the 2nd day of Hackathon one of our teammate (Satyam) got this idea of creating a **Scavenger Hunt** game with a matrix movie theme and make it as a prank kind of a game.
+## What it does
+Inside our **Scavenger Hunt (Hunt for your future)** there are two cube platforms one is in red color with ```Competitive Programming sheet for interview``` written on it and one platform with ```Kunal's DSA complete bootcamp``` written on it, the user has to search for them and stand in the middle to choose it.
+```Small Hint: try to choose red first and than blue```
+## How we built it
+We used NextJs with react-three-fiber with stream (for the chat feature you can check it out in the game), we used blender for adding the animations to the player model and Vercel to host it.
+## Challenges we ran into
+We were completely noob with NextJs but still we chose it since it makes it really easier to make a full stack project and host it on vercel so with the help of lot of googling and going through the documentation we were able to successfully use it.
+After our initial plan failed we were completely devastated but than this idea bought back the energy within us !
+We were facing a lot of issues while adding the controls to the model as well like this one
+![BugImg](https://discord.com/channels/1049644000556093580/1049680558705356811/1054013342932545577) 
+## Accomplishments that we're proud of
+Even after all the weird bugs and all the different kind of hurdles we were able to make this game work ! and even we were able to host it on the same time so that others can see/play it.
+## What we learned
+We learned some of the best practices of NextJs, best practices of loading a 3d model, using maths effectively in coding and tons of new concepts !
+## What's next for Scavenger Hunt(Hunt for your Future) !
+Our next plan is to add a timer above so that the players have to find it within a time limit, and will try to make it multiplayer in future
