@@ -6,6 +6,8 @@ Our original idea was to create a 3D multiplayer game but because of facing tons
 ## What it does
 Inside our **Scavenger Hunt (Hunt for your future)** there are two cube platforms one is in red color with ```Competitive Programming sheet for interview``` written on it and one platform with ```Kunal's DSA complete bootcamp``` written on it, the user has to search for them and stand in the middle to choose it.
 ```Small Hint: try to choose red first and than blue```
+<img width="470" alt="cpplatform" src="https://user-images.githubusercontent.com/100528412/208306246-18b99f2f-7e01-480e-ab13-8864728659b1.png">
+<img width="635" alt="kunalplatform" src="https://user-images.githubusercontent.com/100528412/208306267-f929f67f-292b-48c9-b1a6-9150300814f4.png">
 ## How we built it
 We used NextJs with react-three-fiber with stream (for the chat feature you can check it out in the game), we used blender for adding the animations to the player model and Vercel to host it.
 ## Challenges we ran into
