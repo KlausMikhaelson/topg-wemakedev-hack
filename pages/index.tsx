@@ -1,4 +1,4 @@
-import { OrbitControls, Environment } from '@react-three/drei'
+import { OrbitControls, Environment, Html } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
@@ -26,7 +26,7 @@ export default function Home() {
       <ambientLight intensity={0}/>
       {/* <OrbitControls /> */}
       {/* <SocketHome /> */}
-      <Suspense fallback={null}>
+      <Suspense fallback={<Html><h1>Loading...</h1></Html>}>
         <Player />
         <Hurdle boundary={500} count={50}/>
         <fog attach="fog" color="#03A062" near={10} far={50} />
